@@ -1,3 +1,7 @@
+
+Still in Draft :)
+
+
 # MTT CoHack Challenge : Containers
 
 **[Home](../README.md)** - [Next Challenge >](./02-aks_private.md)
@@ -16,16 +20,12 @@ The application we will use in this hack has three components, as the following 
 
 You can fulfill the challenge with either one of these two options:
 
-1. Using your local Docker installation:
-  - Deploy the **database** as a SQL Server as container in your local machine
-  - Deploy the **API** image in your local machine out of your ACR (you will need a container runtime in your local machine).
-  - Make sure that the API can access the database (you can test calling the API endpoints)
-  - Deploy the **web** frontend that will connect to the API.
-2. Using Azure Container Instances (if you do not have a local Docker installation):
-  - Deploy the **database** as an Azure SQL Database
-  - Deploy the **API** image as Azure Container Instance in Azure
-  - Make sure that the API can connect to the database
-  - Deploy the **web** frontend that will connect to the API
+
+  - Build the **API** image in your local machine .
+  - Build the **WEB** image in your local machine .
+  - push your images to your ACR (Azure Container Registry) you deployed (see beforecohack)
+  - Deploy the **API** image as Azure Container Instance in Azure, make sure that the **API** can connect to the database
+  - Deploy the **web** frontend  as Azure Container Instance that will connect to the API
 
 For both you should get in the web frontend something like the following. If the frontend is able to get the database version through the API it means that the whole chain is working (web -> api -> database):
 
@@ -56,3 +56,5 @@ These docs might help you achieving these objectives:
 - [Run SQL Server container images with Docker](https://docs.microsoft.com/sql/linux/quickstart-install-connect-docker)
 - [Azure Container Registry](https://docs.microsoft.com/azure/container-registry/container-registry-intro)
 - [Azure Container Instances](https://docs.microsoft.com/azure/container-instances/)
+
+Based on the microsoft/WhatTheHack github repo
