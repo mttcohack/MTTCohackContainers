@@ -1,0 +1,100 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "DB-NameName": {
+            "type": "string",
+            "minLength": 1
+        },
+        "DB-NameCollation": {
+            "type": "string",
+            "minLength": 1,
+            "defaultValue": "SQL_Latin1_General_CP1_CI_AS"
+        },
+        "DB-NameEdition": {
+            "type": "string",
+            "defaultValue": "Basic",
+            "allowedValues": [
+                "Basic",
+                "Standard",
+                "Premium"
+            ]
+        },
+        "DB-NameRequestedServiceObjectiveName": {
+            "type": "string",
+            "defaultValue": "Basic",
+            "allowedValues": [
+                "Basic",
+                "S0",
+                "S1",
+                "S2",
+                "P1",
+                "P2",
+                "P3"
+            ],
+            "metadata": {
+                "description": "Describes the performance level for Edition"
+            }
+        },
+        "SQLSRV-NAMEAdminLogin": {
+            "type": "string",
+            "minLength": 1
+        },
+        "SQLSRV-NAMEAdminLoginPassword": {
+            "type": "securestring"
+        }
+    },
+    "resources": [
+        {
+            "name": "[variables('fullyQualifiedDB-NameName')]",
+            "type": "Microsoft.Sql/servers/databases",
+            "location": "[resourceGroup().location]",
+            "apiVersion": "2014-04-01-preview",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', variables('SQLSRV-NAMEName'))]"
+            ],
+            "tags": {
+                "displayName": "DB-Name"
+            },
+            "properties": {
+                "collation": "[parameters('DB-NameCollation')]",
+                "edition": "[parameters('DB-NameEdition')]",
+                "maxSizeBytes": "1073741824",
+                "requestedServiceObjectiveName": "[parameters('DB-NameRequestedServiceObjectiveName')]"
+            }
+        },
+        {
+            "name": "[variables('SQLSRV-NAMEName')]",
+            "type": "Microsoft.Sql/servers",
+            "location": "[resourceGroup().location]",
+            "apiVersion": "2014-04-01-preview",
+            "dependsOn": [],
+            "tags": {
+                "displayName": "SQLSRV-NAME"
+            },
+            "properties": {
+                "administratorLogin": "[parameters('SQLSRV-NAMEAdminLogin')]",
+                "administratorLoginPassword": "[parameters('SQLSRV-NAMEAdminLoginPassword')]"
+            },
+            "resources": [
+                {
+                    "name": "AllowAllWindowsAzureIps",
+                    "type": "firewallrules",
+                    "location": "[resourceGroup().location]",
+                    "apiVersion": "2014-04-01-preview",
+                    "dependsOn": [
+                        "[concat('Microsoft.Sql/servers/', variables('SQLSRV-NAMEName'))]"
+                    ],
+                    "properties": {
+                        "startIpAddress": "0.0.0.0",
+                        "endIpAddress": "0.0.0.0"
+                    }
+                }
+            ]
+        }
+    ],
+    "variables": {
+        "fullyQualifiedDB-NameName": "[concat(variables('SQLSRV-NAMEName'), '/', parameters('DB-NameName'))]",
+        "SQLSRV-NAMEName": "[concat('SQLSRV-NAME', uniqueString(resourceGroup().id))]"
+    }
+}
