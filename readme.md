@@ -53,7 +53,6 @@ These docs might help you achieving these objectives:
 
 - [API image documentation and source code](./Resources/api/README.md)
 - [Web image documentation and source code](./Resources/web/README.md)
-- [Run SQL Server container images with Docker](https://docs.microsoft.com/sql/linux/quickstart-install-connect-docker)
 - [Azure Container Registry](https://docs.microsoft.com/azure/container-registry/container-registry-intro)
 - [Azure Container Instances](https://docs.microsoft.com/azure/container-instances/)
 
