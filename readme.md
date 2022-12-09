@@ -1,4 +1,4 @@
-# Challenge : Containers
+# MTT CoHack Challenge : Containers
 
 **[Home](../README.md)** - [Next Challenge >](./02-aks_private.md)
 
@@ -8,7 +8,7 @@ This challenge will cover the basics of containers and container runtimes, and g
 
 ## Description
 
-Create an Azure Container Registry. Build the API and Web images in this repository and store them in your new ACR.
+Build the API and Web images in this repository and store them in your ACR, test application first on local machine and then in Azure.
 
 The application we will use in this hack has three components, as the following picture describes: a [web](./Resources/web) tier offers an HTML portal that shows the information produced by the [api](./Resources/api), that in its turn access a **database** with a simple query that shows the database version. You will find the source code for each application in the files supplied for this hack:
 
