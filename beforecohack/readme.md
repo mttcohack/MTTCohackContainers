@@ -3,8 +3,8 @@ Still editing .......
 ## Requirements
 
 1. You will need Owner or Contributor permissions for an Azure subscription to use in the lab.
-2. PC with local Docker Desktop installation ([or use prbuild vm with docker desktop and vs code](https://github.com/koenraadhaedens/win10devpcdocker)) 
-3. 
+2. PC with local Docker Desktop installation ([or use pre-build vm with docker desktop and vs code](https://github.com/koenraadhaedens/win10devpcdocker)) 
+    - Install Docker Desktop on Pc  <https://www.docker.com/products/docker-desktop/>
 
 
 
