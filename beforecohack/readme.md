@@ -6,8 +6,8 @@ Still editing .......
 2. PC with local Docker Desktop installation ([or use pre-build vm with docker desktop and vs code](https://github.com/koenraadhaedens/win10devpcdocker)) 
     - Install Docker Desktop on Pc  <https://www.docker.com/products/docker-desktop/>
 3. Some Azure Resources. (Azure Container Registry, Azure Virtual Network, Application Gateway, Azure Sql database)
-
-U can use this template to deploy to your subscprition
+    (some of this resources are optional if you want to have you container instances intagraded in a virtual network or if you want to use appication gateway to publish you web)
+You can use this template to deploy to your subscprition
    
    
 
