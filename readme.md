@@ -1,10 +1,7 @@
 
-Still in Draft :)
-
 
 # MTT CoHack Challenge : Containers
 
-**[Home](../README.md)**
 
 ## Introduction
 
