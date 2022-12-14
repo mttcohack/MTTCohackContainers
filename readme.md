@@ -4,7 +4,7 @@ Still in Draft :)
 
 # MTT CoHack Challenge : Containers
 
-**[Home](../README.md)** - [Next Challenge >](./02-aks_private.md)
+**[Home](../README.md)**
 
 ## Introduction
 
