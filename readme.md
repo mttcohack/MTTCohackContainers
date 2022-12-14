@@ -18,7 +18,7 @@ The application we will use in this hack has three components, as the following 
 
 ![app architecture](./images/app_arch.png)
 
-You can fulfill the challenge with either one of these two options:
+You can fulfill the challenge with the following steps:
 
 
   - Build the **API** image in your local machine .
