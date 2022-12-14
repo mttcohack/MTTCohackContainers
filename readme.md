@@ -39,7 +39,7 @@ Here a sample screenshot of what it should look like:
 
 ![sample output](./images/aci_web.png)
 
-Note the two links at the bottom of the page in the picture above will not work at this stage yet.
+Note the two links at the bottom of the page in the picture above will not work.
 
 
 ## Learning Resources
