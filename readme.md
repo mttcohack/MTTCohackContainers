@@ -7,6 +7,8 @@
 
 This challenge will cover the basics of containers and container runtimes, and get you familiar with the components of the application we will use throughout this hack.
 
+Please visit the [Before the CoHack](./beforecohack/)  page to see te requirements
+
 ## Description
 
 Build the API and Web images in this repository and store them in your ACR, test application first on local machine and then in Azure.
