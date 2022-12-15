@@ -1,0 +1,78 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sqlserver_admin": {
+            "type": "String"
+     },
+        "sqlserver_password": {
+            "type": "secureString"
+     }
+    },
+    "functions": [],
+    "variables": {
+"sqlserverName": "[concat('lsqlsrv' , uniqueString(subscription().subscriptionId))]"
+
+    },
+    "resources": [
+{
+    "name": "vnet-chohack",
+    "type": "Microsoft.Network/virtualNetworks",
+    "apiVersion": "2020-11-01",
+    "location": "[resourceGroup().location]",
+    "tags": {
+        "displayName": "virtualNetwork1"
+    },
+    "properties": {
+        "addressSpace": {
+            "addressPrefixes": [
+                "10.99.0.0/16"
+            ]
+        },
+        "subnets": [
+            {
+                "name": "subnet-fe",
+                "properties": {
+                    "addressPrefix": "10.99.1.0/24"
+                }
+            },
+            {
+                "name": "subnet-api",
+                "properties": {
+                    "addressPrefix": "10.99.2.0/24"
+                }
+            }
+        ]
+    }
+},
+{
+    "name": "[variables('sqlserverName')]",
+    "type": "Microsoft.Sql/servers",
+    "apiVersion": "2014-04-01",
+    "location": "[resourceGroup().location]",
+    "properties": {
+        "administratorLogin": "[parameters('sqlserver_admin')]",
+        "administratorLoginPassword": "[parameters('sqlserver_password')]"
+    }
+},
+
+{
+    "name": "[concat(variables('sqlserverName'),'/dbcohack')]",
+    "type": "Microsoft.Sql/servers/databases",
+    "apiVersion": "2014-04-01",
+    "location": "[resourceGroup().location]",
+    "dependsOn": [
+        "[resourceId('Microsoft.Sql/servers', variables('sqlserverName'))]"
+    ],
+    "properties": {
+        "collation": "SQL_Latin1_General_CP1_CI_AS",
+        "edition": "Basic",
+        "maxSizeBytes": "1073741824",
+        "requestedServiceObjectiveName": "Basic"
+    }
+}
+
+
+    ],
+    "outputs": {}
+}
