@@ -9,14 +9,14 @@ This challenge will cover the basics of containers and container runtimes, and g
 
 ## Requirements
 
-### To be done before the CoHack (individual)
+#### To be done before the CoHack (individual)
 
 1. You will need Owner or Contributor permissions for an Azure subscription to use in the lab.
 2. PC with local Docker Desktop installation 
     - Install Docker Desktop on Pc  <https://www.docker.com/products/docker-desktop/> (needs some reboots)
     - or use pre-build Azure vm with docker desktop and vs code <https://github.com/koenraadhaedens/win10devpcdocker> (will take about 40 minutes to install)
 
-### At least 1 Team Member need to do this    
+#### At least 1 Team Member need to do this    
 
 1. Prepare Azure Resources. (Azure Container Registry, Azure Virtual Network, Application Gateway, Azure Sql database).
 
