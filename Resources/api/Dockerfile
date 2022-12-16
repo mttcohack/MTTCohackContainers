@@ -1,5 +1,4 @@
 FROM ubuntu:18.04
-MAINTAINER Jose Moreno "jose.moreno@microsoft.com"
 
 RUN apt-get update -y && apt-get install -y python3-pip python3-dev build-essential curl libssl1.0.0 libssl-dev libpq-dev
 # See about installing ODBC drivers here: https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-2017
