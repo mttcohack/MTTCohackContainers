@@ -23,7 +23,7 @@ This challenge will cover the basics of containers and container runtimes, and g
     (some of this resources are optional if you want to have you container instances intagraded in a virtual network or if you want to use appication gateway to publish you web)
     
 Use this template to deploy to your subscprition (about 15 min deployment time)
-    
+     
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkoenraadhaedens%2FMTTCohackContainers%2Fmain%2Fbeforecohack.json)
 
