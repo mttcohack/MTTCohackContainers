@@ -5,6 +5,9 @@
         "sqlserver_admin": {
             "type": "String"
      },
+        "Teamnr": {
+            "type": "String"
+     },
         "sqlserver_password": {
             "type": "secureString"
      }
@@ -12,10 +15,10 @@
     "functions": [],
     "variables": {
 
-"acrname": "[concat('cohackacr' , uniqueString(subscription().subscriptionId))]",        
-"sqlserverName": "[concat('cohacksqlsrv' , uniqueString(subscription().subscriptionId))]"
+"acrname": "[concat('cohackacr' , uniqueString(subscription().subscriptionId),'team', parameters('Teamnr'))]",        
+"sqlserverName": "[concat('cohacksqlsrv' , uniqueString(subscription().subscriptionId),'team', parameters('Teamnr'))]"
 
-    },
+                 },
 
 
     "resources": [
