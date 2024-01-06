@@ -23,7 +23,7 @@
 
     "resources": [
 {
-    "name": "vnet-chohack",
+    "name": "[concat('vnet-chohack','team', parameters('Teamnr'))]",
     "type": "Microsoft.Network/virtualNetworks",
     "apiVersion": "2020-11-01",
     "location": "[resourceGroup().location]",
@@ -91,7 +91,7 @@
     "properties": {
         "adminUserEnabled": true
     }
-} 
+}
    ],
     "outputs": {}
 }
