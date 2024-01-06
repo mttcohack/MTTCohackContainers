@@ -68,5 +68,6 @@ These docs might help you achieving these objectives:
 - [Web image documentation and source code](./Resources/web/README.md)
 - [Azure Container Registry](https://docs.microsoft.com/azure/container-registry/container-registry-intro)
 - [Azure Container Instances](https://docs.microsoft.com/azure/container-instances/)
+- [Use CLI to push docker image to ACR](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli?tabs=azure-cli)
 
 Based on the microsoft/WhatTheHack github repo
