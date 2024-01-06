@@ -14,9 +14,6 @@
 
 "acrname": "[concat('cohackacr' , uniqueString(subscription().subscriptionId))]",        
 "sqlserverName": "[concat('cohacksqlsrv' , uniqueString(subscription().subscriptionId))]",
-"appgwname": "[concat('cohackappgw' , uniqueString(subscription().subscriptionId))]",
-"appgwpubip": "[concat('cohackpibip' , uniqueString(subscription().subscriptionId))]",
-"appgwpubipdnsname": "[concat('cohackweb' , uniqueString(subscription().subscriptionId))]"
     },
 
 
@@ -90,116 +87,6 @@
     "properties": {
         "adminUserEnabled": true
     }
-},
-
-{
-    "name": "[variables('appgwpubip')]",
-    "type": "Microsoft.Network/publicIPAddresses",
-    "apiVersion": "2020-11-01",
-    "location": "[resourceGroup().location]",
-    "properties": {
-        "publicIPAllocationMethod": "Dynamic",
-        "dnsSettings": {
-            "domainNameLabel": "[variables('appgwpubipdnsname')]"
-        }
-    }
-},
-
-{
-    "type": "Microsoft.Network/applicationGateways",
-    "apiVersion": "2020-11-01",
-    "name": "[variables('appgwname')]",
-    "location": "[resourceGroup().location]",
-    "dependsOn": [
-        "[resourceId('Microsoft.Network/virtualNetworks', 'vnet-chohack')]",
-        "[resourceId('Microsoft.Network/publicIPAddresses', variables('appgwpubip'))]"
-    ],
-    "properties": {
-        "sku": {
-            "name": "Standard_v2",
-            "tier": "Standard_v2",
-            "capacity": 1
-        },
-        "gatewayIPConfigurations": [
-            {
-                "name": "appGatewayIpConfig",
-                "properties": {
-                    "subnet": {
-                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet-chohack', 'subnet-fe')]"
-                    }
-                }
-            }
-        ],
-        "frontendIPConfigurations": [
-            {
-                "name": "appGatewayFrontendIP",
-                "properties": {
-                    "PublicIPAddress": {
-                        "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('appgwpubip'))]"
-                    }
-                }
-            }
-        ],
-        "frontendPorts": [
-            {
-                "name": "appGatewayFrontendPort",
-                "properties": {
-                    "Port": 80
-                }
-            }
-        ],
-        "backendAddressPools": [
-            {
-                "name": "be-cohack-web",
-                "properties": {}
-            }
-        ],
-        "backendHttpSettingsCollection": [
-            {
-                "name": "besettingcohack",
-                "properties": {
-                    "Port": 80,
-                    "Protocol": "Http",
-                    "CookieBasedAffinity": "Disabled"
-                }
-            }
-        ],
-        "httpListeners": [
-            {
-                "name": "cohackhttplistner",
-                "properties": {
-                    "FrontendIPConfiguration": {
-                        "Id": "[resourceId('Microsoft.Network/applicationGateways/frontendIPConfigurations', variables('appgwname'), 'appGatewayFrontendIP')]"
-                    },
-                    "FrontendPort": {
-                        "Id": "[resourceId('Microsoft.Network/applicationGateways/frontendPorts',  variables('appgwname'), 'appGatewayFrontendPort')]"
-                    },
-                    "Protocol": "Http",
-                    "SslCertificate": null
-                }
-            }
-        ],
-        "requestRoutingRules": [
-            {
-                "Name": "ruleName",
-                "properties": {
-                    "RuleType": "Basic",
-                    "httpListener": {
-                        "id": "[resourceId('Microsoft.Network/applicationGateways/httpListeners', variables('appgwname'), 'cohackhttplistner')]"
-                    },
-                    "backendAddressPool": {
-                        "id": "[resourceId('Microsoft.Network/applicationGateways/backendAddressPools', variables('appgwname'), 'be-cohack-web')]"
-                    },
-                    "backendHttpSettings": {
-                        "id": "[resourceId('Microsoft.Network/applicationGateways/backendHttpSettingsCollection', variables('appgwname'), 'besettingcohack')]"
-                    }
-                }
-            }
-        ]
-    }
-}
-
-
-    ],
+}    ],
     "outputs": {}
 }
