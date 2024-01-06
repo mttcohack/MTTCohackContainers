@@ -13,7 +13,8 @@
     "variables": {
 
 "acrname": "[concat('cohackacr' , uniqueString(subscription().subscriptionId))]",        
-"sqlserverName": "[concat('cohacksqlsrv' , uniqueString(subscription().subscriptionId))]",
+"sqlserverName": "[concat('cohacksqlsrv' , uniqueString(subscription().subscriptionId))]"
+
     },
 
 
