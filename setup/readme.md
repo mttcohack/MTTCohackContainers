@@ -19,4 +19,4 @@
 Use this template to deploy to your subscprition (about 15 min deployment time)
      
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkoenraadhaedens%2FMTTCohackContainers%2Fmain%2Fbeforecohack.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkoenraadhaedens%2FMTTCohackContainers%2Fmain%2F%setup%2Fbeforecohack.json)
