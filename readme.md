@@ -27,6 +27,8 @@ You can fulfill the challenge with the following steps:
   - push your images to your ACR (Azure Container Registry) you deployed (see beforecohack)
   - Deploy the **API** image as Azure Container Instance in Azure, make sure that the **API** can connect to the database
   - Deploy the **WEB** frontend  as Azure Container Instance that will connect to the API
+  - (optional challenge) deploy solution to **AKS**.
+  - (optional Challenge) Make sure **secure info** is not as clear text in deployment file
 
 You should get in the web frontend something like the following. If the frontend is able to get the database version through the API it means that the whole chain is working (web -> api -> database)
 
