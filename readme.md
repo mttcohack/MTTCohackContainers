@@ -38,8 +38,6 @@ You can fulfill the challenge with the following steps:
 - The web container can access the API container
 - The api can access the database, and the database version is correctly displayed in the frontend
 
-If web frontend is successfully to retrieve the database version via the API, this indicates that the entire system (web -> API -> database) is functioning properly.
-
 Here a sample screenshot of what it should look like:
 
 ![sample output](./images/aci_web.png)
