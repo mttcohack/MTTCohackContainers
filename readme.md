@@ -30,13 +30,15 @@ You can fulfill the challenge with the following steps:
   - (optional challenge) deploy solution to **AKS**.
   - (optional Challenge) Make sure **secure info** is not as clear text in deployment file
 
-You should get in the web frontend something like the following. If the frontend is able to get the database version through the API it means that the whole chain is working (web -> api -> database)
+
 
 ## Success Criteria
 
 - You can access the web component
 - The web container can access the API container
 - The api can access the database, and the database version is correctly displayed in the frontend
+
+If web frontend is successfully to retrieve the database version via the API, this indicates that the entire system (web -> API -> database) is functioning properly.
 
 Here a sample screenshot of what it should look like:
 
