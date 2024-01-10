@@ -55,6 +55,6 @@ These docs might help you achieving these objectives:
 - [Azure Container Instances](https://docs.microsoft.com/azure/container-instances/)
 - [Use CLI to push docker image to ACR](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli?tabs=azure-cli)
 - [docker CLI Cheat Sheet](https://docs.docker.com/get-started/docker_cheatsheet.pdf)
-
+- (https://learn.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-acr)
 
 Based on the microsoft/WhatTheHack github repo
