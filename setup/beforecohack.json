@@ -22,6 +22,7 @@
 
 
     "resources": [
+        
 {
     "name": "[concat('vnet-chohack','team', parameters('Teamnr'))]",
     "type": "Microsoft.Network/virtualNetworks",
