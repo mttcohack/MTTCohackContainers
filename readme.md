@@ -21,16 +21,14 @@ The application we will use in this hack has three components, as the following 
 
 You can fulfill the challenge with the following steps:
 
-
   - Build the **API** image in your local machine .
   - Build the **WEB** image in your local machine .
-  - push your images to your ACR (Azure Container Registry) you deployed (see beforecohack)
-  - Deploy the **API** image as Azure Container Instance in Azure, make sure that the **API** can connect to the database
-  - Deploy the **WEB** frontend  as Azure Container Instance that will connect to the API
+  - Run containers on local machine and make sure that you can browse to the webcontainer and see the api info.
+  - push your images to your ACR (Azure Container Registry) alreday deployed 
+  - Deploy the **API** image as Azure Container Instance in Azure, make sure that the **API** is not exposed to the public internet and that the **API** can connect to the public endpoint from the database over the internal network.
+  - Deploy the **WEB** frontend as an APP Service, the webservice needs to be accessible from the internet and must be able to connect to **API** over internal network.
   - (optional challenge) deploy solution to **AKS**.
   - (optional Challenge) Make sure **secure info** is not as clear text in deployment file
-
-
 
 ## Success Criteria
 
