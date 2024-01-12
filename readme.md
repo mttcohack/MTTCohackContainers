@@ -25,7 +25,7 @@ You can fulfill the challenge with the following steps:
   - Execute the containers on the development machine and ensure that you are able to navigate to the web container's interface to view the API information.
   - push your images to your ACR (Azure Container Registry alreday deployed)
   - Deploy the **API** image as an Azure Container Instance in Azure, make sure that the **API** remains inaccessible to the public internet and configure the API to connect to the database's public endpoint via the internal network.
-  - Deploy the WEB frontend as an App Service, ensuring it is accessible from the internet. Additionally, configure it to connect to the API through the internal network.
+  - Deploy the **WEB** frontend as an App Service, ensuring it is accessible from the internet. Additionally, configure it to connect to the **API** through the internal network.
   - (optional challenge) deploy solution to **AKS**.
   - (optional Challenge) Make sure **secure info** is not as clear text in deployment file
 
