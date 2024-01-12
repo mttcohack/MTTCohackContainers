@@ -1,5 +1,4 @@
 FROM centos:latest
-MAINTAINER Jose Moreno <jose.moreno@microsoft.com>
 
 # CentOS Linux 8 had reached the End Of Life (EOL) on December 31st, 2021.
 # It means that CentOS 8 will no longer receive development resources from the official CentOS project.
